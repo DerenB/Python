@@ -65,3 +65,31 @@ def convert_to_float(my_list):
     return converted_damages_list
 
 print(convert_to_float(damages))
+print()
+
+def details(name_li,month_li,year_li,wind_li,area_li,dmg_li,death_li):
+    det_dict = {}
+    i = 0
+    while i < len(name_li):
+        name = name_li[i]
+        sub_dict = {}
+        sub_dict["Name"] = name_li[i]
+        sub_dict["Month"] = month_li[i]
+        sub_dict["Year"] = year_li[i]
+        sub_dict["Max Sustained Wind"] = wind_li[i]
+        sub_dict["Areas Affected"] = area_li[i]
+        sub_dict["Damage"] = dmg_li[i]
+        sub_dict["Deaths"] = death_li[i]
+
+        det_dict[name] = sub_dict
+        i += 1
+        print(det_dict[name])
+        print()
+
+    return det_dict
+
+detailed_dictionary = details(names,months,years,max_sustained_winds,areas_affected,damages,deaths)
+
+print("Output")
+print(detailed_dictionary["Carol"])
+
